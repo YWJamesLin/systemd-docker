@@ -306,6 +306,10 @@ func getCgroupsForPid(pid int) (map[string]string, error) {
 			continue
 		}
 
+        if len(line[1]) == 0 {
+            continue
+        }
+
 		ret[line[1]] = line[2]
 	}
 
